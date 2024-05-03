@@ -14,7 +14,7 @@
    - It will save the final dataset in local as a parquet file and also push it to huggingface.
    - ![image](https://github.com/AdhirajSingh1206/trec-product-search-24/assets/38189805/cfe091c8-7fef-430d-928c-341b736d1b9e)
 
-  ## Using the dataset: 
+  ## Using the dataset (parent_asin is the unqiue ID given to each product in the dataset): 
 
   1. Using the parquet file:
       ```python
@@ -33,3 +33,7 @@
         print(len(dataset))
         dataset.head()
         
+  ## Sample evaluation and data usage (BM25 baseline): 
+
+  1. *sample_bm25_evaluation.ipynb* uses the *sample_retrieval_dataset.parquet* dataset which contains 500 sample queries and their corresponding ideal product.
+  2. We further download the zero_shot_retrieval_task_dataset from huggingface and do a simple BM25 based retrieval and calculate the average hit-rate@50. 
